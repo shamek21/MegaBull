@@ -3,100 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaBull</title><link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>MegaBull</title>
+  <link rel="icon" type="image/png" href="favicon.png?v=1">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #0a0a0a, #000000);
-      background-attachment: fixed;
+      background: radial-gradient(circle at top, #00111a, #000000);
       color: white;
       text-align: center;
       position: relative;
       overflow-x: hidden;
     }
-
-    /* Efekt gwiazd */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent url('https://i.ibb.co/8bRjYt0/stars.png') repeat;
-      opacity: 0.6;
-      z-index: -1;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-top: 20px;
-      color: #00ff66;
-      text-shadow: 0 0 20px #00ff66;
-    }
-
-    .subtitle {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-      color: #ffffffcc;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 20px auto;
+    header {
       padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      line-height: 1.6;
     }
-
-    .slogans {
-      margin-top: 20px;
-      font-style: italic;
-      color: #00ffcc;
+    header img {
+      max-width: 300px;
+      height: auto;
     }
-
+    h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
+    p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.6em;
+      font-size: 1.2em;
+    }
     .token {
       margin-top: 30px;
-      padding: 10px;
+      padding: 15px;
       background: #111;
-      border: 1px solid #00ff66;
-      border-radius: 8px;
+      border-radius: 10px;
       display: inline-block;
+      font-size: 1.1em;
+    }
+    .token code {
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <h1>MegaBull</h1>
-  <p class="subtitle">The unstoppable bull of crypto 🚀🌕</p>
+  <header>
+    <h1>MegaBull</h1>
+    <h2>The unstoppable bull of crypto 🚀🌕</h2>
+    <img src="file_00000000a66461f5848d2ce...png" alt="MegaBull logo">
+  </header>
 
-  <div class="content">
-    <p>Mega Bull is not just another memecoin pretending to have a "futuristic purpose." We have only one goal: to defy gravity. Yes, you read that right. Our bull is so bullish that he's not just galloping; he's trying to jump to the moon. Don't ask how, because even he doesn't know yet.</p>
+  <main>
+    <p>
+      Mega Bull is not just another memecoin pretending to have a "futuristic purpose."  
+      We have only one goal: to defy gravity.  
+      Yes, you read that right. Our bull is so bullish that he's not just galloping;  
+      he's trying to jump to the moon.
+    </p>
+    <p>
+      Mega Bull is simply a powerful dose of optimism and bullishness all in one.  
+      There are no complicated mechanisms, roadmaps, or whitepapers that no one reads anyway.  
+      There's just a bull with more energy than the entire stock market on a Monday morning.
+    </p>
 
-    <p>Mega Bull is simply a powerful dose of optimism and bullishness all in one. There are no complicated mechanisms, roadmaps, or whitepapers that no one reads anyway. There's just a bull with more energy than the entire stock market on a Monday morning.</p>
-
-    <div class="slogans">
-      <p>Mega Bull: Other memecoins go up. We fly.</p>
-      <p>Mega Bull: For the price of one bull, you get a whole herd!</p>
-      <p>Mega Bull: With us, you buy the bull, not the bullsh*t.</p>
-      <p>Mega Bull: Because being "mega" isn't enough.</p>
-      <p>Mega Bull: Make your wallet feel like... well, like a bull.</p>
+    <div class="token">
+      <strong>Token address:</strong><br>
+      <code onclick="navigator.clipboard.writeText('JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump')">
+        JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
+      </code>
+      <br>(click to copy)
     </div>
-  </div>
+  </main>
 
-  <div class="token" onclick="copyToken()">
-    Token: JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
-  </div>
-
-  <script>
-    function copyToken() {
-      navigator.clipboard.writeText("JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump");
-      alert("Token address copied!");
-    }
-  </script>
+  <footer>
+    © 2025 MegaBull MemeCoin
+  </footer>
 </body>
 </html>
