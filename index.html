@@ -3,43 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaBull MemeCoin</title>
+  <title>MegaBull</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: #000010;
-      color: white;
       font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #001133, #000010);
+      background-attachment: fixed;
+      color: white;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
     }
-    h1 {
-      font-size: 3em;
-      margin-top: 20px;
-      color: #00ff80;
+
+    /* Efekt gwiazd */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent url('https://i.ibb.co/2M1V0mP/stars.png') repeat;
+      opacity: 0.6;
+      z-index: 0;
     }
-    img {
-      max-width: 300px;
-      margin-top: 20px;
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
     }
-    p {
+
+    .token {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      font-size: 0.9em;
+      border-bottom: 1px solid #333;
+    }
+    .token a {
+      color: #00ff88;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .token a:hover {
+      text-decoration: underline;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 15px 0;
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+    }
+    header p {
       font-size: 1.2em;
-      margin-top: 15px;
+      margin-bottom: 20px;
     }
-    a {
-      color: #00ffea;
+
+    img {
+      max-width: 90%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 100, 0.6);
+    }
+
+    .description {
+      font-size: 1.1em;
+      margin: 30px auto;
+      max-width: 700px;
+      line-height: 1.6;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background: linear-gradient(90deg, #ff4d4d, #ff9900);
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 150, 0, 0.7);
     }
-    a:hover {
-      text-decoration: underline;
+    a.button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.8em;
+      color: gray;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>MegaBull 🚀🐂</h1>
-  <img src="megabull.png" alt="MegaBull Logo">
-  <p>The unstoppable bull of crypto 🌕</p>
-  <p>Buy now on <a href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">Pump.fun</a></p>
+  <div class="content">
+    <!-- Token Address u góry -->
+    <div class="token">
+      Token Address: 
+      <a href="#" onclick="navigator.clipboard.writeText('JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump'); alert('Token address copied!');">
+        JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
+      </a>
+    </div>
+
+    <!-- Tytuł i opis -->
+    <header>
+      <h1>MegaBull 🚀🐂</h1>
+      <p>The unstoppable bull of crypto 🌕</p>
+    </header>
+
+    <!-- Główny obrazek -->
+    <img src="megabull.png" alt="MegaBull Rocket Ride">
+
+    <!-- Opis projektu -->
+    <div class="description">
+      Mega Bull is not just another memecoin pretending to have a "futuristic purpose."  
+      We have only one goal: to defy gravity. Yes, you read that right.  
+      Our bull is so bullish that he's not just galloping; he's trying to jump to the moon.  
+      Don't ask how, because even he doesn't know yet.  
+      Mega Bull is simply a powerful dose of optimism and bullishness all in one.  
+      <br><br>
+      👉 Buy now on <a href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">Pump.fun</a>
+    </div>
+
+    <!-- Slogany -->
+    <div class="description">
+      <p><strong>Marketing Slogans</strong></p>
+      <p>Mega Bull: Other memecoins go up. We fly.</p>
+      <p>Mega Bull: For the price of one bull, you get a whole herd!</p>
+      <p>Mega Bull: With us, you buy the bull, not the bullsh*t.</p>
+      <p>Mega Bull: Because being "mega" isn't enough.</p>
+      <p>Mega Bull: Make your wallet feel like... well, like a bull.</p>
+    </div>
+
+    <footer>
+      © 2025 MegaBull | Community Powered
+    </footer>
+  </div>
 </body>
 </html>
