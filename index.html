@@ -4,87 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MegaBull</title>
-  <link rel="icon" type="image/png" href="favicon.png?v=1">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #00111a, #000000);
+      background: #0b0f19;
       color: white;
       text-align: center;
-      position: relative;
-      overflow-x: hidden;
-    }
-    header {
       padding: 20px;
     }
-    header img {
-      max-width: 300px;
-      height: auto;
-    }
+
     h1 {
-      font-size: 2.5em;
-      margin: 10px 0;
+      font-size: 3em;
+      margin-bottom: 0.2em;
     }
-    p {
-      max-width: 800px;
-      margin: 10px auto;
-      line-height: 1.6em;
-      font-size: 1.2em;
+
+    h2 {
+      font-weight: normal;
+      font-size: 1.5em;
+      margin-bottom: 1.5em;
     }
-    .token {
+
+    .logo {
+      max-width: 300px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    .token-box {
       margin-top: 30px;
       padding: 15px;
-      background: #111;
+      background: #222;
       border-radius: 10px;
       display: inline-block;
-      font-size: 1.1em;
     }
-    .token code {
-      background: #222;
-      padding: 5px 10px;
+
+    .token-box code {
+      display: block;
+      background: #333;
+      padding: 10px;
       border-radius: 5px;
+      margin-top: 5px;
       cursor: pointer;
     }
+
     footer {
-      margin-top: 50px;
-      padding: 20px;
+      margin-top: 40px;
       font-size: 0.9em;
       color: #aaa;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>MegaBull</h1>
-    <h2>The unstoppable bull of crypto 🚀🌕</h2>
-    <img src="file_00000000a66461f5848d2ce...png" alt="MegaBull logo">
-  </header>
+  <h1>MegaBull</h1>
+  <h2>The unstoppable bull of crypto 🚀🌕</h2>
 
-  <main>
-    <p>
-      Mega Bull is not just another memecoin pretending to have a "futuristic purpose."  
-      We have only one goal: to defy gravity.  
-      Yes, you read that right. Our bull is so bullish that he's not just galloping;  
-      he's trying to jump to the moon.
-    </p>
-    <p>
-      Mega Bull is simply a powerful dose of optimism and bullishness all in one.  
-      There are no complicated mechanisms, roadmaps, or whitepapers that no one reads anyway.  
-      There's just a bull with more energy than the entire stock market on a Monday morning.
-    </p>
+  <!-- popraw link do obrazka -->
+  <img src="logo.png" alt="MegaBull logo" class="logo">
 
-    <div class="token">
-      <strong>Token address:</strong><br>
-      <code onclick="navigator.clipboard.writeText('JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump')">
-        JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
-      </code>
-      <br>(click to copy)
-    </div>
-  </main>
+  <div class="content">
+    <p>Mega Bull is not just another memecoin pretending to have a "futuristic purpose." We have only one goal: to defy gravity. Yes, you read that right. Our bull is so bullish that he's not just galloping; he's trying to jump to the moon.</p>
+
+    <p>Mega Bull is simply a powerful dose of optimism and bullishness all in one. There are no complicated mechanisms, roadmaps, or whitepapers that no one reads anyway. There's just a bull with more energy than the entire stock market on a Monday morning.</p>
+  </div>
+
+  <div class="token-box">
+    <strong>Token address:</strong>
+    <code onclick="copyToken()">JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code>
+    (click to copy)
+  </div>
 
   <footer>
     © 2025 MegaBull MemeCoin
   </footer>
+
+  <script>
+    function copyToken() {
+      const token = "JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump";
+      navigator.clipboard.writeText(token).then(() => {
+        alert("Token address copied!");
+      });
+    }
+  </script>
 </body>
 </html>
