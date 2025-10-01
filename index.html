@@ -1,31 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MegaBull 🚀🐂</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaBull MemeCoin 🚀🐂</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#001a33; color:white; text-align:center; }
-    header { padding:20px; font-size:2em; }
-    .hero { position:relative; height:70vh; }
-    .hero img { max-width:180px; margin:20px; }
-    .btn { display:inline-block; margin:10px; padding:12px 20px;
-           background:#19ff90; color:#001a33; font-weight:bold;
-           text-decoration:none; border-radius:20px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e6ffe6;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ff66;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #99ffcc;
+    }
+    .btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #fff;
+      background: #00cc66;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00ff99;
+    }
+    .token-box {
+      margin: 20px auto;
+      padding: 10px;
+      background: #1a1a1a;
+      border: 1px solid #00ff66;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      word-wrap: break-word;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      margin: 30px 0;
+      font-size: 0.9rem;
+      color: #66cc99;
+    }
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>🚀 MegaBull MemeCoin 🐂🌕</header>
-  <div class="hero">
+  <header>
+    <h1>MegaBull MemeCoin 🐂🚀</h1>
+    <p>The most bullish meme on the blockchain!</p>
+    <a class="btn" href="https://pump.fun/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">🚀 Buy on Pump.fun</a>
+  </header>
+
+  <section class="token-box">
+    <strong>Token Address:</strong><br>
+    JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
+  </section>
+
+  <section class="gallery">
     <img src="megabull-boss.png" alt="MegaBull Boss">
-    <img src="megabull-elon.png" alt="Elon with mascot">
-    <img src="megabull-mascot.png" alt="Mascot">
-    <img src="megabull-rocket.png" alt="Rocket">
-  </div>
-  <div>
-    <p><b>Token Address:</b><br>
-    <code id="token-address">JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code></p>
-    <a href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" class="btn">Buy on Pump.fun</a>
-  </div>
+    <img src="megabull-elon.png" alt="MegaBull Elon">
+    <img src="megabull-rocket.png" alt="MegaBull Rocket">
+    <img src="megabull-mascot.png" alt="MegaBull Mascot">
+  </section>
+
+  <footer>
+    <p>© 2025 MegaBull MemeCoin. To the Moon 🌕🚀</p>
+  </footer>
 </body>
 </html>
