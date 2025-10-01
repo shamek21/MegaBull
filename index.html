@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MegaBull 🚀🐂</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #000000, #1a1a1a, #0d0d0d);
+      background: linear-gradient(to bottom, #001f3f, #004080, #0066cc);
       color: white;
       text-align: center;
     }
@@ -24,13 +23,23 @@
       max-width: 250px;
       margin: 15px;
     }
+    /* Rakieta animacja */
     .rocket {
       animation: fly 6s infinite linear;
     }
     @keyframes fly {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-50px); }
+      50% { transform: translateY(-60px); }
       100% { transform: translateY(0); }
+    }
+    /* Maskotka animacja */
+    .mascot {
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(10deg); }
     }
     .section {
       margin: 40px 20px;
@@ -39,7 +48,7 @@
     footer {
       margin-top: 50px;
       font-size: 0.9em;
-      color: #aaa;
+      color: #ddd;
     }
   </style>
 </head>
@@ -49,14 +58,19 @@
   </header>
 
   <div class="hero">
+    <!-- Byk -->
     <img src="file_000000007b0861f9bd7d8e3c9ada97b5.png" alt="MegaBull Bull">
-    <img src="file_00000000d5a861f9a51ea2be65684e9e.png" alt="Elon with mascot">
+    <!-- Elon z maskotką -->
+    <div class="mascot">
+      <img src="file_00000000d5a861f9a51ea2be65684e9e.png" alt="Elon with mascot and thumbs up">
+    </div>
+    <!-- Rakieta -->
     <img src="file_00000000a66461f5848d2ce575e95e42.png" alt="Rocket" class="rocket">
   </div>
 
   <div class="section">
     <p><b>MegaBull</b> is not just a coin – it’s a movement!  
-    Backed by memes, powered by the community, and blessed by Elon himself 🙌</p>
+    Powered by memes, driven by the bull, and blessed by Elon himself 🙌👍</p>
     <p>🐂 Bull strong. 🚀 Rocket fast. 🌕 Moon ready.</p>
   </div>
 
