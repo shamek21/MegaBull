@@ -1,85 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MegaBull 🚀🐂</title><title>MegaBull BLUE TEST</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MegaBull 🚀🐂</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #001f3f, #004080, #0066cc);
-      color: white;
-      text-align: center;
+    :root{
+      --blue1:#001f3f;
+      --blue2:#004080;
+      --blue3:#0066cc;
+      --card:#0b2a55cc;
+      --text:#ffffff;
+      --muted:#dbe7ff;
+      --accent:#7cc8ff;
     }
-    header {
-      padding: 20px;
-      font-size: 2em;
-      font-weight: bold;
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      text-align:center;
+      background:linear-gradient(to bottom, var(--blue1), var(--blue2) 40%, var(--blue3));
+      min-height:100svh;
+      overflow-x:hidden;
     }
-    .hero {
-      margin-top: 30px;
+
+    header{
+      padding:28px 16px 8px;
+      font-size:clamp(22px, 4vw, 40px);
+      font-weight:800;
+      letter-spacing:.5px;
     }
-    .hero img {
-      max-width: 250px;
-      margin: 15px;
+    header .moon{font-size:1.2em; vertical-align:middle}
+
+    .wrap{
+      width:min(1100px, 96%);
+      margin:0 auto;
     }
-    /* Rakieta animacja */
-    .rocket {
-      animation: fly 6s infinite linear;
+
+    /* HERO */
+    .stage{
+      position:relative;
+      margin-top:8px;
+      padding:22px 10px 8px;
     }
-    @keyframes fly {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-60px); }
-      100% { transform: translateY(0); }
+
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:center;
     }
-    /* Maskotka animacja */
-    .mascot {
-      display: inline-block;
-      animation: bounce 2s infinite;
+    @media (max-width: 800px){
+      .row{ grid-template-columns: 1fr; }
     }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(10deg); }
+
+    .card{
+      background:var(--card);
+      border:1px solid #0f3a78;
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 12px 30px #00000055, inset 0 0 40px #0a3e7a33;
     }
-    .section {
-      margin: 40px 20px;
-      font-size: 1.2em;
+
+    .img{
+      width:100%;
+      height:auto;
+      max-height:520px;
+      object-fit:contain;
+      display:block;
+      margin-inline:auto;
+      image-rendering:auto;
     }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #ddd;
+
+    /* ANIMACJE */
+    .mascot{
+      animation:bounce 1.9s infinite ease-in-out;
+      transform-origin:50% 80%;
+      filter: drop-shadow(0 8px 10px #0006);
+    }
+    @keyframes bounce{
+      0%,100%{ transform:translateY(0) rotate(0deg); }
+      40%{ transform:translateY(-24px) rotate(2deg); }
+      60%{ transform:translateY(-12px) rotate(-1deg); }
+    }
+
+    .rocket{
+      animation:float 5.5s ease-in-out infinite;
+      filter: drop-shadow(0 8px 12px #0007);
+    }
+    @keyframes float{
+      0%,100%{ transform:translateY(0) }
+      50%{ transform:translateY(-36px) }
+    }
+
+    /* Mała rakieta przelatująca przez ekran */
+    .flyby{
+      position:absolute;
+      left:-20vw;
+      top: -10px;
+      width:min(160px, 28vw);
+      opacity:.95;
+      animation:flyby 9s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes flyby{
+      0%{ transform:translateX(-20vw) rotate(-5deg); opacity:.0 }
+      5%{ opacity:1 }
+      50%{ transform:translateX(70vw) rotate(2deg); }
+      100%{ transform:translateX(140vw) rotate(6deg); opacity:.6 }
+    }
+
+    .blurb{
+      margin:22px auto 10px;
+      padding:18px 16px;
+      background:#0a2d5dcc;
+      border:1px solid #0f3a78;
+      border-radius:16px;
+      line-height:1.4;
+      font-size:clamp(15px, 2.7vw, 18px);
+      color:var(--muted);
+    }
+    .token{
+      margin:12px auto 0;
+      font-weight:700;
+      color:var(--accent);
+      word-break:break-all;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+
+    footer{
+      margin:34px 0 22px;
+      color:#d7e7ff;
+      opacity:.9;
+      font-size:14px;
     }
   </style>
 </head>
 <body>
   <header>
-    🚀 Welcome to MegaBull 🐂 MemeCoin 🌕
+    🚀 Welcome to <span style="color:#9bd3ff">MegaBull</span> 🐂 MemeCoin <span class="moon">🌕</span>
   </header>
 
-  <div class="hero">
-    <!-- Byk -->
-    <img src="file_000000007b0861f9bd7d8e3c9ada97b5.png" alt="MegaBull Bull">
-    <!-- Elon z maskotką -->
-    <div class="mascot">
-      <img src="file_00000000d5a861f9a51ea2be65684e9e.png" alt="Elon with mascot and thumbs up">
+  <div class="wrap stage">
+    <!-- mała rakieta przelatująca -->
+    <img src="megabull-rocket-only.png" alt="Rocket flyby" class="flyby" />
+
+    <div class="row">
+      <!-- Elon z kciukiem -->
+      <div class="card">
+        <img
+          class="img"
+          src="megabull-elon%20(2).png"
+          alt="Elon Musk thumbs up with mascot"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Rakieta + byczek -->
+      <div class="card">
+        <img
+          class="img rocket"
+          src="megabull-rocket%20(3).png"
+          alt="MegaBull on rocket"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Skacząca maskotka -->
+      <div class="card">
+        <img
+          class="img mascot"
+          src="megabull-mascot.png"
+          alt="MegaBull mascot jumping with thumbs up"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Dodatkowo sam flyby już jest na górze jako ozdoba -->
+      <div class="card">
+        <div class="blurb">
+          <strong>MegaBull</strong> isn’t just a coin — it’s a movement.
+          Bull strong. Rocket fast. Moon ready. 🙌👍
+          <div class="token">Token: <code>0x123456789ABCDEF</code></div>
+        </div>
+      </div>
     </div>
-    <!-- Rakieta -->
-    <img src="file_00000000a66461f5848d2ce575e95e42.png" alt="Rocket" class="rocket">
   </div>
 
-  <div class="section">
-    <p><b>MegaBull</b> is not just a coin – it’s a movement!  
-    Powered by memes, driven by the bull, and blessed by Elon himself 🙌👍</p>
-    <p>🐂 Bull strong. 🚀 Rocket fast. 🌕 Moon ready.</p>
-  </div>
-
-  <div class="section">
-    <p>💎 Token Address: <code>0x123456789ABCDEF</code></p>
-  </div>
-
-  <footer>
-    © 2025 MegaBull. To the moon and beyond! 🌕✨
-  </footer>
+  <footer>© 2025 MegaBull — To the moon and beyond! 🌕✨</footer>
 </body>
 </html>
