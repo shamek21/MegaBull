@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,34 @@
       color: #0f0;
       text-align: center;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Gwiazdki w tle */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
     }
 
     header {
@@ -40,10 +68,9 @@
     .scene {
       position: relative;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       height: 500px;
       margin: auto;
-      overflow: hidden;
     }
 
     .scene img {
@@ -70,15 +97,15 @@
 
     .elon {
       bottom: 0;
-      right: -20px;
-      width: 50%;
+      right: -10px;
+      width: 45%;
       z-index: 3;
     }
 
     .extra {
       top: 0;
       left: 5%;
-      width: 40%;
+      width: 35%;
       z-index: 0;
       opacity: 0.7;
     }
@@ -102,7 +129,6 @@
       width: 90%;
       word-break: break-all;
       border-radius: 8px;
-      color: #0f0;
     }
 
     a.buy-btn {
@@ -131,6 +157,9 @@
 </head>
 <body>
 
+  <!-- Gwiazdki w tle -->
+  <div class="stars" id="stars"></div>
+
   <header>
     <h1>MegaBull 🚀🐂</h1>
     <p>The unstoppable bull of crypto!</p>
@@ -155,5 +184,18 @@
     <p>&copy; 2025 MegaBull. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Generowanie losowych gwiazdek
+    const starsContainer = document.getElementById("stars");
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (1.5 + Math.random() * 2) + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
+
 </body>
-</html>   
+</html>
