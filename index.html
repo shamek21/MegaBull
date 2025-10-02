@@ -1,127 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MegaBull 🚀🐂</title>
+  <meta name="theme-color" content="#00ff88" />
   <style>
+    /* Base */
+    :root {
+      --neon: #00ff88;
+      --neon-soft: #66ffcc;
+      --bg-top: #000014;
+      --bg: #000000;
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #000014, #000000 80%);
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, var(--bg-top), var(--bg) 80%);
       color: #fff;
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* fajerwerki tło */
+    /* Fireworks canvas (background only) */
     .fireworks {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
       z-index: 1;
     }
 
-    header, .hero, .content, footer {
-      position: relative;
-      z-index: 2;
-    }
+    header, .hero, .content, footer { position: relative; z-index: 2; }
 
-    header {
-      padding: 20px;
-    }
-
+    header { padding: 20px; }
     header h1 {
-      font-size: 2.5em;
-      color: #00ff88;
-      text-shadow: 0 0 15px #00ff88, 0 0 30px #00ffaa;
+      margin: 0 0 6px;
+      font-size: 2.5rem;
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon), 0 0 30px #00ffaa;
     }
-
     header p {
-      font-size: 1.1em;
-      color: #66ffcc;
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--neon-soft);
       text-shadow: 0 0 8px #00ffaa;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+    /* Image gallery (mobile-first) */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
       padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
-    .hero img {
-      max-width: 90%;
-      height: auto;
+    @media (min-width: 600px) {
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;              /* no cropping */
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,255,150,0.6);
-      transition: transform 0.3s;
+      transition: transform .25s ease;
     }
+    .gallery img:hover { transform: scale(1.03); }
 
-    .hero img:hover {
-      transform: scale(1.05);
-    }
-
-    .content {
-      padding: 20px;
-    }
-
+    /* Content / CTA */
+    .content { padding: 20px; max-width: 900px; margin: 0 auto; }
     .content h2 {
       color: #00ffcc;
       text-shadow: 0 0 10px #00ffaa;
+      margin: 10px 0 12px;
     }
+    .content p { line-height: 1.6; margin: 0 auto 8px; padding: 0 10px; }
+
+    .token {
+      background: rgba(0,255,150,.15);
+      padding: 15px;
+      margin: 20px auto 10px;
+      border-radius: 10px;
+      width: min(85%, 720px);
+      color: #00ffaa;
+      border: 1px solid rgba(0,255,150,.4);
+      text-shadow: 0 0 8px #00ffaa;
+      word-wrap: break-word;
+      cursor: pointer;
+      transition: background .2s ease;
+      user-select: none;
+    }
+    .token:hover { background: rgba(0,255,150,.25); }
+    .help { font-size: .8rem; color: #aaa; margin: 6px 0 0; }
 
     .btn {
       display: inline-block;
-      padding: 15px 30px;
-      background: #00ff88;
+      padding: 14px 28px;
+      background: var(--neon);
       color: #000;
-      font-weight: bold;
-      border-radius: 50px;
+      font-weight: 700;
+      border-radius: 48px;
       text-decoration: none;
-      margin: 20px 0;
-      transition: 0.3s;
-      box-shadow: 0 0 20px #00ff88, 0 0 40px #00ffaa;
+      margin: 18px 0 8px;
+      box-shadow: 0 0 20px var(--neon), 0 0 40px #00ffaa;
+      transition: background .25s ease, box-shadow .25s ease, transform .1s ease;
     }
-
-    .btn:hover {
+    .btn:active { transform: translateY(1px); }
+    .btn:hover  {
       background: #00cc66;
       box-shadow: 0 0 30px #00ffaa, 0 0 60px #00ffaa;
     }
 
-    .token {
-      background: rgba(0, 255, 150, 0.15);
-      padding: 15px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 85%;
-      color: #00ffaa;
-      font-size: 1em;
-      border: 1px solid rgba(0, 255, 150, 0.4);
-      text-shadow: 0 0 8px #00ffaa;
-      word-wrap: break-word;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .token:hover {
-      background: rgba(0, 255, 150, 0.25);
-    }
-
-    footer {
-      padding: 20px;
-      font-size: 0.85em;
-      color: #777;
-    }
+    footer { padding: 24px; font-size: .9rem; color: #888; }
   </style>
 </head>
 <body>
 
-  <!-- fajerwerki w tle -->
+  <!-- Fireworks background -->
   <canvas class="fireworks"></canvas>
 
   <header>
@@ -130,28 +129,26 @@
   </header>
 
   <section class="hero">
-    <img src="megabull-rocket (3).png" alt="Rocket">
-    <img src="megabull-elon (2).png" alt="Elon with MegaBull">
-    <img src="megabull-bull2 (3).png" alt="MegaBull Mascot">
-    <img src="megabull-rocket-only.png" alt="Rocket Only">
+    <div class="gallery">
+      <img src="megabull-rocket (3).png" alt="MegaBull rocket illustration">
+      <img src="megabull-elon (2).png" alt="Elon with MegaBull">
+      <img src="megabull-bull2 (3).png" alt="MegaBull mascot">
+      <img src="megabull-rocket-only.png" alt="Rocket only">
+    </div>
   </section>
 
   <section class="content">
     <h2>About MegaBull</h2>
-    <p>
-      Mega Bull is not just another memecoin pretending to have a purpose.  
-      Our bull is so bullish that he’s not just galloping; he’s trying to jump to the moon 🌕.  
-      MegaBull is pure energy, optimism and fun – with no boring roadmaps or whitepapers.  
-      Just a bull charging through the crypto space!
-    </p>
+    <p>Mega Bull isn’t just another memecoin with a pretend purpose. Our bull is so bullish he isn’t just galloping — he’s trying to jump to the moon 🌕. MegaBull is pure energy, optimism, and fun — no boring roadmaps or whitepapers. Just a bull charging through the crypto space!</p>
 
-    <div class="token" onclick="copyToken()">
+    <!-- Click-to-copy token -->
+    <div class="token" id="tokenBox" role="button" aria-label="Copy token address">
       <strong>Token Address:</strong><br>
-      JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
-      <p style="font-size:0.8em; color:#aaa; margin:5px 0 0;">(tap to copy)</p>
+      <span id="tokenText">JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</span>
+      <div class="help">(tap to copy)</div>
     </div>
 
-    <a class="btn" href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">
+    <a class="btn" href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank" rel="noopener">
       🚀 Buy on Pump.fun
     </a>
   </section>
@@ -161,73 +158,48 @@
   </footer>
 
   <script>
-    // fajerwerki animacja
+    /* Fireworks animation (lightweight) */
     const canvas = document.querySelector('.fireworks');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function sizeCanvas(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+    sizeCanvas(); addEventListener('resize', sizeCanvas);
 
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
+    const rand = (a,b)=>Math.random()*(b-a)+a;
+    class Particle{
+      constructor(x,y,c){ this.x=x; this.y=y; this.c=c; this.r=2; this.vx=rand(-3,3); this.vy=rand(-3,3); this.a=1; }
+      draw(){ ctx.globalAlpha=this.a; ctx.fillStyle=this.c; ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fill(); }
+      step(){ this.x+=this.vx; this.y+=this.vy; this.a-=0.02; }
     }
-
-    class Particle {
-      constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.radius = 2;
-        this.speedX = random(-3, 3);
-        this.speedY = random(-3, 3);
-        this.alpha = 1;
+    let ps=[];
+    (function loop(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      if(Math.random()<0.05){
+        const x=rand(100,canvas.width-100), y=rand(50,canvas.height/2);
+        const c=`hsl(${Math.random()*360},100%,60%)`;
+        for(let i=0;i<30;i++) ps.push(new Particle(x,y,c));
       }
-      draw() {
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.alpha -= 0.02;
-      }
-    }
+      ps=ps.filter(p=> (p.step(), p.a>0) && (p.draw(), true));
+      requestAnimationFrame(loop);
+    })();
 
-    let particles = [];
-
-    function fireworks() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (Math.random() < 0.05) {
-        const x = random(100, canvas.width - 100);
-        const y = random(50, canvas.height / 2);
-        const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-        for (let i = 0; i < 30; i++) {
-          particles.push(new Particle(x, y, color));
-        }
+    /* Click-to-copy token (English message) */
+    const token = "JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump";
+    document.getElementById('tokenBox').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(token);
+        alert("Token address copied to clipboard ✅");
+      } catch {
+        // Fallback (older browsers)
+        const t = document.getElementById('tokenText');
+        const range = document.createRange();
+        range.selectNodeContents(t);
+        const sel = window.getSelection();
+        sel.removeAllRanges(); sel.addRange(range);
+        document.execCommand('copy');
+        sel.removeAllRanges();
+        alert("Token address copied ✅");
       }
-      particles.forEach((p, i) => {
-        p.update();
-        p.draw();
-        if (p.alpha <= 0) particles.splice(i, 1);
-      });
-      requestAnimationFrame(fireworks);
-    }
-    fireworks();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
     });
-
-    // kopiowanie tokena
-    function copyToken() {
-      const token = "JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump";
-      navigator.clipboard.writeText(token).then(() => {
-        alert("✅ Token address copied!");
-      });
-    }
   </script>
 </body>
 </html>
