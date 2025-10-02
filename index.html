@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaBull MemeCoin 🚀</title>
+  <title>MegaBull 🚀🐂</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: radial-gradient(circle at top, #000014, #000000 80%);
       color: #fff;
       text-align: center;
       overflow-x: hidden;
     }
 
+    /* fajerwerki tło */
+    .fireworks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    header, .hero, .content, footer {
+      position: relative;
+      z-index: 2;
+    }
+
     header {
-      padding: 30px 15px;
+      padding: 20px;
     }
 
     header h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       color: #00ff88;
-      text-shadow: 0 0 10px #00ff88, 0 0 20px #00ffaa, 0 0 40px #00ffaa;
-      margin-bottom: 10px;
+      text-shadow: 0 0 15px #00ff88, 0 0 30px #00ffaa;
     }
 
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #66ffcc;
       text-shadow: 0 0 8px #00ffaa;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
     }
 
     .hero img {
       max-width: 90%;
       height: auto;
-      margin: 15px 0;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 255, 150, 0.7);
-      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 0 20px rgba(0,255,150,0.6);
+      transition: transform 0.3s;
     }
 
     .hero img:hover {
@@ -46,8 +68,6 @@
 
     .content {
       padding: 20px;
-      line-height: 1.6;
-      color: #ddd;
     }
 
     .content h2 {
@@ -63,9 +83,8 @@
       font-weight: bold;
       border-radius: 50px;
       text-decoration: none;
-      margin: 25px 0;
+      margin: 20px 0;
       transition: 0.3s;
-      font-size: 1.1em;
       box-shadow: 0 0 20px #00ff88, 0 0 40px #00ffaa;
     }
 
@@ -75,16 +94,16 @@
     }
 
     .token {
-      background: rgba(0, 255, 150, 0.05);
+      background: rgba(0, 255, 150, 0.1);
       padding: 12px;
       margin: 20px auto;
       border-radius: 10px;
       width: 85%;
-      font-size: 0.95em;
       color: #00ffaa;
-      word-wrap: break-word;
+      font-size: 0.9em;
       border: 1px solid rgba(0, 255, 150, 0.4);
       text-shadow: 0 0 8px #00ffaa;
+      word-wrap: break-word;
     }
 
     footer {
@@ -92,27 +111,11 @@
       font-size: 0.85em;
       color: #777;
     }
-
-    /* Fireworks */
-    .fireworks {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: transparent;
-      z-index: 1;
-    }
-
-    header, .hero, .content, footer {
-      position: relative;
-      z-index: 2;
-    }
   </style>
 </head>
 <body>
 
+  <!-- fajerwerki w tle -->
   <canvas class="fireworks"></canvas>
 
   <header>
@@ -121,7 +124,7 @@
   </header>
 
   <section class="hero">
-    <img src="megabull-rocket (3).png" alt="MegaBull Rocket">
+    <img src="megabull-rocket (3).png" alt="Rocket">
     <img src="megabull-elon (2).png" alt="Elon with MegaBull">
     <img src="megabull-bull2 (3).png" alt="MegaBull Mascot">
     <img src="megabull-rocket-only.png" alt="Rocket Only">
@@ -151,7 +154,7 @@
   </footer>
 
   <script>
-    // Simple fireworks animation
+    // fajerwerki animacja
     const canvas = document.querySelector('.fireworks');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -205,6 +208,11 @@
       requestAnimationFrame(fireworks);
     }
     fireworks();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 </body>
 </html>
