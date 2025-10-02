@@ -1,96 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaBull</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MegaBull 🚀🐂</title>
   <style>
+    :root {
+      --bg:#030b1a;
+      --bg2:#071a36;
+      --neon:#19ff90;
+      --accent:#00d4ff;
+      --text:#eaf3ff;
+      --muted:#9bb4d6;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
     body {
-      margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0a0a0a, #1c1c1c);
-      color: #fff;
+      color: var(--text);
+      background: radial-gradient(1000px 600px at 50% -20%, #0a2f63 0%, transparent 70%),
+                  linear-gradient(to bottom, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    .stars {
+      position: fixed; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(2px 2px at 20% 30%, #ffffff80 50%, transparent 52%),
+        radial-gradient(1px 1px at 70% 10%, #ffffff80 50%, transparent 52%),
+        radial-gradient(1.5px 1.5px at 85% 60%, #ffffff80 50%, transparent 52%),
+        radial-gradient(1px 1px at 35% 75%, #ffffff80 50%, transparent 52%);
+      opacity: .5;
+      animation: twinkle 20s linear infinite;
+    }
+    @keyframes twinkle { 0%,100%{opacity:.5} 50%{opacity:.9} }
+
+    header {
+      text-align:center;
+      padding:20px;
+      font-size:2em;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--accent), var(--neon));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow: 0 0 20px #19ff9099;
+    }
+
+    .hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+    .hero img { position: absolute; }
+
+    .bull {
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 240px;
+      animation: float 6s ease-in-out infinite;
+      z-index: 2;
+    }
+    .elon {
+      bottom: 5%;
+      left: 10%;
+      max-width: 140px;
+      animation: bounce 2.5s infinite;
+    }
+    .mascot {
+      bottom: 5%;
+      right: 10%;
+      max-width: 140px;
+      animation: bounce 2s infinite;
+    }
+    .rocket {
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 140px;
+      animation: fly 8s infinite linear;
+    }
+
+    .planet {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--neon) 0%, #006633 70%);
+      box-shadow: 0 0 80px var(--neon);
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-20px); }
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes fly {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-120px); }
+      100% { transform: translateY(0); }
+    }
+
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #001a33;
+      border-top: 1px solid #004466;
+    }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--neon));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .section p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: var(--muted);
+      font-size: 1.1em;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 16px 28px;
+      background: var(--neon);
+      color: #001a33;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 0 25px var(--neon);
+      transition: transform 0.2s;
+      font-size: 1.1em;
+    }
+    .btn:hover { transform: scale(1.08); }
+
+    footer {
+      margin: 40px 0 20px;
+      font-size: 0.9em;
+      color: #bbb;
       text-align: center;
     }
-    header {
-      padding: 20px;
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+
+    @media (max-width: 768px) {
+      .bull { max-width: 200px; }
+      .elon, .mascot { max-width: 110px; }
+      .rocket { max-width: 120px; }
+      .planet { width: 240px; height: 240px; }
+      header { font-size: 1.6em; }
     }
-    h1 {
-      font-size: 2em;
-      color: #00ff66;
-      margin: 0;
-    }
-    p {
-      font-size: 1.1em;
-    }
-    .content {
-      padding: 20px;
-    }
-    img {
-      max-width: 95%;
-      height: auto;
-      margin: 15px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .token {
-      background: #222;
-      padding: 15px;
-      margin: 25px auto;
-      border-radius: 8px;
-      max-width: 90%;
-      word-wrap: break-word;
-    }
-    .button {
-      display: inline-block;
-      background: #00ff66;
-      color: #000;
-      padding: 14px 24px;
-      margin-top: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 1.1em;
-    }
-    .button:hover {
-      background: #00cc55;
-    }
-    footer {
-      margin-top: 30px;
-      padding: 15px;
-      background: #111;
-      font-size: 0.9em;
+    @media (max-width: 480px) {
+      .hero { height: 80vh; }
+      .bull { max-width: 180px; }
+      .elon, .mascot { max-width: 90px; }
+      .rocket { max-width: 100px; }
+      .planet { width: 200px; height: 200px; }
+      .section h2 { font-size: 1.4em; }
+      .section p { font-size: 1em; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🚀 MegaBull Token 🐂</h1>
-  </header>
+  <div class="stars"></div>
 
-  <div class="content">
-    <p>The most bullish memecoin of 2025. Community powered, unstoppable energy! 💎</p>
+  <header>🚀 MegaBull MemeCoin 🐂🌕</header>
 
-    <img src="megabull-bull2 (3).png" alt="MegaBull Bull">
-    <img src="megabull-elon (2).png" alt="MegaBull Elon">
-    <img src="megabull-rocket (3).png" alt="MegaBull Rocket">
-    <img src="megabull-rocket-only.png" alt="MegaBull Rocket Only">
+  <div class="hero">
+    <div class="planet"></div>
+    <canvas id="fireworks"></canvas>
 
-    <div class="token">
-      <h2>Token Address</h2>
-      <p>JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</p>
-    </div>
+    <img src="megabull-boss.png" alt="MegaBull Boss" class="bull" />
+    <img src="megabull-elon.png" alt="Elon with mascot" class="elon" />
+    <img src="megabull-mascot.png" alt="Mascot" class="mascot" />
+    <img src="megabull-rocket.png" alt="Rocket" class="rocket" />
+  </div>
 
-    <a class="button" href="https://pump.fun/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">🔥 Buy on PumpFun 🔥</a>
+  <div class="section">
+    <h2>About MegaBull</h2>
+    <p><b>MegaBull</b> is not just a coin — it’s a movement! Meme powered, Elon blessed, bull strong.</p>
+  </div>
+
+  <div class="section">
+    <h2>Tokenomics</h2>
+    <p>💎 Supply: 1,000,000,000</p>
+    <p>🚀 0% Taxes, 100% Community Driven</p>
+    <p>🌕 No Roadmap, only Memes</p>
+    <p><b>Token Address:</b><br>
+      <code id="token-address">JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code>
+    </p>
+    <button class="btn" onclick="copyAddress()">📋 Copy Address</button>
+    <a href="https://pump.fun" class="btn" target="_blank">Buy on Pump.fun</a>
   </div>
 
   <footer>
-    <p>🌐 MegaBull - Made by the community 🚀</p>
+    © 2025 MegaBull — To the moon and beyond! 🌕✨
   </footer>
+
+<script>
+  const canvas = document.getElementById('fireworks');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize(); window.addEventListener("resize", resize);
+
+  function firework(x, y){
+    for(let i=0;i<80;i++){
+      const a = Math.random()*2*Math.PI, s = Math.random()*4;
+      particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:80,age:0,color:`hsl(${Math.random()*360},100%,60%)`});
+    }
+  }
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy; p.vy+=0.05; p.age++;
+      ctx.fillStyle=p.color; ctx.globalAlpha=Math.max(1-p.age/p.life,0);
+      ctx.beginPath(); ctx.arc(p.x,p.y,2,0,Math.PI*2); ctx.fill();
+    });
+    particles=particles.filter(p=>p.age<p.life);
+    requestAnimationFrame(animate);
+  }
+  animate();
+  setInterval(()=>{ firework(W/2,H/2+100); },3000);
+
+  function copyAddress() {
+    const addr = document.getElementById("token-address").textContent;
+    navigator.clipboard.writeText(addr).then(() => {
+      alert("✅ Token address copied to clipboard!");
+    });
+  }
+</script>
 </body>
 </html>
