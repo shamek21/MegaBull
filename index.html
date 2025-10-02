@@ -4,7 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MegaBull MemeCoin 🚀🐂</title>
-  <style>
+  <style><style>
+  .scene {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 350px; /* zmniejszona wysokość */
+    margin: auto;
+    overflow: hidden; /* ukrywa wystające fragmenty */
+  }
+
+  .scene img {
+    position: absolute;
+    height: auto;
+  }
+
+  .rocket {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55%;  /* zmniejszona rakieta */
+    z-index: 1;
+  }
+
+  .bull {
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;  /* zmniejszony byk */
+    z-index: 2;
+  }
+
+  .elon {
+    bottom: 0;
+    right: -10px;
+    width: 40%; /* zmniejszony Elon */
+    z-index: 3;
+  }
+
+  .extra {
+    top: 0;
+    left: 5%;
+    width: 30%; /* zmniejszona dodatkowa rakieta */
+    z-index: 0;
+    opacity: 0.7;
+  }
+  </style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
