@@ -3,31 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaBull 🚀🐂</title>
+  <title>MegaBull MemeCoin 🚀🐂</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #000014, #000000 80%);
-      color: #fff;
+      background: #000;
+      color: #0f0;
       text-align: center;
       overflow-x: hidden;
-    }
-
-    /* fajerwerki tło */
-    .fireworks {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    header, .hero, .content, footer {
-      position: relative;
-      z-index: 2;
     }
 
     header {
@@ -37,92 +21,113 @@
     header h1 {
       font-size: 2.5em;
       color: #00ff88;
-      text-shadow: 0 0 15px #00ff88, 0 0 30px #00ffaa;
+      text-shadow: 0 0 10px #00ff88, 0 0 20px #0f0;
     }
 
     header p {
-      font-size: 1.1em;
-      color: #66ffcc;
-      text-shadow: 0 0 8px #00ffaa;
+      color: #0f0;
+      font-size: 1.2em;
     }
 
+    /* SCENE */
     .hero {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 15px;
-      padding: 20px;
+      padding: 20px 0;
     }
 
-    .hero img {
-      max-width: 90%;
+    .scene {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      margin: auto;
+    }
+
+    .scene img {
+      position: absolute;
+      max-width: 80%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,255,150,0.6);
-      transition: transform 0.3s;
     }
 
-    .hero img:hover {
-      transform: scale(1.05);
+    .rocket {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      z-index: 1;
     }
 
-    .content {
+    .bull {
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 65%;
+      z-index: 2;
+    }
+
+    .elon {
+      bottom: 0;
+      right: -20px;
+      width: 50%;
+      z-index: 3;
+    }
+
+    .extra {
+      top: 0;
+      left: 5%;
+      width: 40%;
+      z-index: 0;
+      opacity: 0.7;
+    }
+
+    /* TOKEN SECTION */
+    .token {
+      margin-top: 40px;
       padding: 20px;
     }
 
-    .content h2 {
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffaa;
+    .token h2 {
+      color: #00ff88;
     }
 
-    .btn {
+    .token code {
+      display: block;
+      background: #111;
+      border: 1px solid #00ff88;
+      padding: 10px;
+      margin: 10px auto;
+      width: 90%;
+      word-break: break-all;
+      border-radius: 8px;
+    }
+
+    a.buy-btn {
       display: inline-block;
-      padding: 15px 30px;
+      margin-top: 15px;
+      padding: 12px 25px;
       background: #00ff88;
       color: #000;
       font-weight: bold;
-      border-radius: 50px;
+      border-radius: 8px;
       text-decoration: none;
-      margin: 20px 0;
-      transition: 0.3s;
-      box-shadow: 0 0 20px #00ff88, 0 0 40px #00ffaa;
+      box-shadow: 0 0 15px #00ff88;
     }
 
-    .btn:hover {
-      background: #00cc66;
-      box-shadow: 0 0 30px #00ffaa, 0 0 60px #00ffaa;
-    }
-
-    .token {
-      background: rgba(0, 255, 150, 0.15);
-      padding: 15px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 85%;
-      color: #00ffaa;
-      font-size: 1em;
-      border: 1px solid rgba(0, 255, 150, 0.4);
-      text-shadow: 0 0 8px #00ffaa;
-      word-wrap: break-word;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .token:hover {
-      background: rgba(0, 255, 150, 0.25);
+    a.buy-btn:hover {
+      background: #0f0;
+      box-shadow: 0 0 25px #0f0;
     }
 
     footer {
-      padding: 20px;
-      font-size: 0.85em;
-      color: #777;
+      margin: 40px 0 20px;
+      font-size: 0.8em;
+      color: #666;
     }
   </style>
 </head>
 <body>
-
-  <!-- fajerwerki w tle -->
-  <canvas class="fireworks"></canvas>
 
   <header>
     <h1>MegaBull 🚀🐂</h1>
@@ -130,104 +135,23 @@
   </header>
 
   <section class="hero">
-    <img src="megabull-rocket (3).png" alt="Rocket">
-    <img src="megabull-elon (2).png" alt="Elon with MegaBull">
-    <img src="megabull-bull2 (3).png" alt="MegaBull Mascot">
-    <img src="megabull-rocket-only.png" alt="Rocket Only">
+    <div class="scene">
+      <img src="megabull-rocket (3).png" alt="Rocket" class="rocket">
+      <img src="megabull-bull2 (3).png" alt="Bull" class="bull">
+      <img src="megabull-elon (2).png" alt="Elon" class="elon">
+      <img src="megabull-rocket-only.png" alt="Extra Rocket" class="extra">
+    </div>
   </section>
 
-  <section class="content">
-    <h2>About MegaBull</h2>
-    <p>
-      Mega Bull is not just another memecoin pretending to have a purpose.  
-      Our bull is so bullish that he’s not just galloping; he’s trying to jump to the moon 🌕.  
-      MegaBull is pure energy, optimism and fun – with no boring roadmaps or whitepapers.  
-      Just a bull charging through the crypto space!
-    </p>
-
-    <div class="token" onclick="copyToken()">
-      <strong>Token Address:</strong><br>
-      JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
-      <p style="font-size:0.8em; color:#aaa; margin:5px 0 0;">(tap to copy)</p>
-    </div>
-
-    <a class="btn" href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">
-      🚀 Buy on Pump.fun
-    </a>
+  <section class="token">
+    <h2>Official Token Address</h2>
+    <code>JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code>
+    <a href="https://pump.fun" target="_blank" class="buy-btn">Buy on Pump.fun</a>
   </section>
 
   <footer>
-    <p>© 2025 MegaBull. All rights reserved.</p>
+    <p>&copy; 2025 MegaBull. All rights reserved.</p>
   </footer>
 
-  <script>
-    // fajerwerki animacja
-    const canvas = document.querySelector('.fireworks');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    class Particle {
-      constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.radius = 2;
-        this.speedX = random(-3, 3);
-        this.speedY = random(-3, 3);
-        this.alpha = 1;
-      }
-      draw() {
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.alpha -= 0.02;
-      }
-    }
-
-    let particles = [];
-
-    function fireworks() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (Math.random() < 0.05) {
-        const x = random(100, canvas.width - 100);
-        const y = random(50, canvas.height / 2);
-        const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
-        for (let i = 0; i < 30; i++) {
-          particles.push(new Particle(x, y, color));
-        }
-      }
-      particles.forEach((p, i) => {
-        p.update();
-        p.draw();
-        if (p.alpha <= 0) particles.splice(i, 1);
-      });
-      requestAnimationFrame(fireworks);
-    }
-    fireworks();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-
-    // kopiowanie tokena
-    function copyToken() {
-      const token = "JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump";
-      navigator.clipboard.writeText(token).then(() => {
-        alert("✅ Token address copied!");
-      });
-    }
-  </script>
 </body>
 </html>
