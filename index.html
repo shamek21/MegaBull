@@ -94,16 +94,22 @@
     }
 
     .token {
-      background: rgba(0, 255, 150, 0.1);
-      padding: 12px;
+      background: rgba(0, 255, 150, 0.15);
+      padding: 15px;
       margin: 20px auto;
       border-radius: 10px;
       width: 85%;
       color: #00ffaa;
-      font-size: 0.9em;
+      font-size: 1em;
       border: 1px solid rgba(0, 255, 150, 0.4);
       text-shadow: 0 0 8px #00ffaa;
       word-wrap: break-word;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .token:hover {
+      background: rgba(0, 255, 150, 0.25);
     }
 
     footer {
@@ -139,14 +145,15 @@
       Just a bull charging through the crypto space!
     </p>
 
+    <div class="token" onclick="copyToken()">
+      <strong>Token Address:</strong><br>
+      JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
+      <p style="font-size:0.8em; color:#aaa; margin:5px 0 0;">(tap to copy)</p>
+    </div>
+
     <a class="btn" href="https://pump.fun/coin/JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump" target="_blank">
       🚀 Buy on Pump.fun
     </a>
-
-    <div class="token">
-      <strong>Token Address:</strong><br>
-      JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump
-    </div>
   </section>
 
   <footer>
@@ -213,6 +220,14 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+
+    // kopiowanie tokena
+    function copyToken() {
+      const token = "JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump";
+      navigator.clipboard.writeText(token).then(() => {
+        alert("✅ Token address copied!");
+      });
+    }
   </script>
 </body>
 </html>
