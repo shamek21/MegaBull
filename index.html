@@ -129,7 +129,7 @@
 
     .btn {
       display: inline-block;
-      margin: 10px;
+      margin-top: 20px;
       padding: 16px 28px;
       background: var(--neon);
       color: #001a33;
@@ -193,9 +193,8 @@
     <p>🚀 0% Taxes, 100% Community Driven</p>
     <p>🌕 No Roadmap, only Memes</p>
     <p><b>Token Address:</b><br>
-      <code id="token-address">JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code>
+      <code>JzcVUJGQM9veuXLwtNyzGnkZ2Ux34bJ8rxi36n9pump</code>
     </p>
-    <button class="btn" onclick="copyAddress()">📋 Copy Address</button>
     <a href="https://pump.fun" class="btn" target="_blank">Buy on Pump.fun</a>
   </div>
 
@@ -228,13 +227,6 @@
   }
   animate();
   setInterval(()=>{ firework(W/2,H/2+100); },3000);
-
-  function copyAddress() {
-    const addr = document.getElementById("token-address").textContent;
-    navigator.clipboard.writeText(addr).then(() => {
-      alert("✅ Token address copied to clipboard!");
-    });
-  }
 </script>
 </body>
 </html>
